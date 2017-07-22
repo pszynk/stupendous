@@ -48,15 +48,11 @@ M.start_volme_widget = start_volme_widget
 ------------------------------------------------------------------------------
 -- Handle volume (through pulseaudio)
 
-local awful    = require("awful")
 local naughty  = require("naughty")
 local tonumber = tonumber
 local string   = string
 local config   = config
-local icons    = loadrc("icons", "jweslley/icons")
-local wibox    = require("wibox")
 
-module("jweslley/volume")
 
 local lastid  = nil
 local channel = "Master"

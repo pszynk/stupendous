@@ -8,26 +8,19 @@ local module = {}
 
 -- require with error notification, end execute setup on config
 
-local function call_setup(lib, config)
-  return lib.setup(config)
-end
-
-local function load_config(config, ...)
+local function requify(...)
   local status, lib = pcall(require, ...)
   if (status) then
-    status, retr = call_setup(lib, config)
-    if (status) then
-      return retr
-    end
+    return lib
   end
 
   naughty.notify({
       preset = naughty.config.presets.critical,
       title = "Oops, error while loading config file(s) do end!",
-      text = "When loading `" .. ... .."`, got the following error:\n" .. status })
+      text = "When loading `" .. ... .."`, got the following error:\n" .. tostring(lib) })
   return nil
 end
 
-module.load_config = load_config
+module.requify = requify
 
 return module
