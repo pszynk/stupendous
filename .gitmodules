@@ -1,0 +1,12 @@
+[submodule "awesome-copycats"]
+	path = other/awesome-copycats
+	url = git@github.com:copycat-killer/awesome-copycats.git
+[submodule "lib/awesome-freedesktop"]
+	path = lib/awesome-freedesktop
+	url = git@github.com:copycat-killer/awesome-freedesktop.git
+[submodule "lib/lain"]
+	path = lib/lain
+	url = git@github.com:copycat-killer/lain.git
+[submodule "lib/tyrannical"]
+	path = lib/tyrannical
+	url = git@github.com:Elv13/tyrannical.git
